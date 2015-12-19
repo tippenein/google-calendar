@@ -16,15 +16,9 @@ import GHC.Generics
 import Servant.API
 import Servant.Client
 
-data Calendar = Calendar {
-    description :: Maybe Text
-  , etag        :: Text -- ETag
-  , id          :: Text
-  , kind        :: Text  -- ex. ("calendar#calendar").
-  , location    :: Maybe Text -- Geographic location of the calendar as free-form text
-  , summary     :: Text -- Title of the calendar.
-  , timeZone    :: Text
-  } deriving (Show, Eq, Generic, Ord)
+import Web.Google.Calendar.Calendar
+import Web.Google.Calendar.Event
+import Web.Google.Calendar.User
 
 type GoogleCalendarApi =
   -- Calendars
